@@ -8,8 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@slippi/slippi-js": "^5.1.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "formidable": "^1.2.2",
+    "mongoose": "^5.11.12",
     "next": "10.0.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "17.0.1",
+    "swr": "^0.4.0",
+    "mkdirp": "^1.0.4"
   }
 }
