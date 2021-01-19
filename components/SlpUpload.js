@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
-import Image from 'next/image';
+import { mutate } from "swr";
 
 const SlpUpload = () => {
   const [selectedFiles, setSelectedFiles] = useState(undefined);
@@ -28,17 +28,15 @@ const SlpUpload = () => {
         "Content-Type": "multipart/form-data"
       }
     }).then(response => {
+        mutate("/api/files")
         setFileName("Upload a Slippi File");
-        console.log(response);
         setMessage(response.data.message);
       })
       .catch((e) => {
         setFileName("Upload a Slippi File")
         setMessage("Could not upload the file!")
-        console.log(e);
       })
     setSelectedFiles(undefined);
-    window.location.reload(false);
   };
 
   return (
