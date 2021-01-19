@@ -3,9 +3,13 @@ const { default: SlippiGame } = require('@slippi/slippi-js');
 
 export default async(req, res) => {
   return new Promise(resolve => {
-    const directoryPath = "./public/upload/";
+    const uploadDir = process.env.uploadDir;
 
-    fs.readdir(directoryPath, function (err, files) {
+    if (!fs.existsSync(uploadDir)){
+      fs.mkdirSync(uploadDir);
+    }
+
+    fs.readdir(uploadDir, function (err, files) {
       if (err) {
         res.status(500).json({
           message: "Unable to scan files!",
@@ -16,13 +20,15 @@ export default async(req, res) => {
       let fileInfos = [];
 
       files.forEach((file) => {
-        const game = new SlippiGame(directoryPath + file);
-        fileInfos.push({
-          name: file,
-          url: "upload/" + file,
-          settings: game.getSettings(),
-          metadata: game.getMetadata()
-        });
+        const game = new SlippiGame(uploadDir + file);
+        const metadata = game.getSettings();
+        if (metadata != null)
+          fileInfos.push({
+            name: file,
+            url: "upload/" + file,
+            settings: game.getSettings(),
+            metadata: game.getMetadata()
+          });
       });
 
       res.status(200).json(fileInfos);
