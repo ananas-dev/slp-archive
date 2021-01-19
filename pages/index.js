@@ -22,13 +22,13 @@ export default function Home() {
     </Head>
       <Row>
         <SlpUpload />
-      <Row class="text-center">
-        <SlpCardGrid />
+      <Row>
+        <SlpCardGrid/>
       </Row>
       </Row>
       <Row>
         <Col>
-          <Alert className="text-center" variant="danger">
+          <Alert variant="danger">
             This is a test prototype, files you upload here may disapear. The server and client code is public on {' '}
             <Alert.Link href="https://github.com/ananas-dev/slp-archive">Github</Alert.Link>
             .
