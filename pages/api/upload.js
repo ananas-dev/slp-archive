@@ -3,7 +3,7 @@ import util from "util";
 import fs from "fs";
 const { default: SlippiGame } = require('@slippi/slippi-js');
 
-const maxSize = 5 * 1024 * 1024;
+const maxSize = 10 * 1024 * 1024;
 const uploadDir = process.env.uploadDir;
 
 export const config = {
