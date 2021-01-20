@@ -17,7 +17,7 @@ const SlpCardGrid = () => {
   }
 
   const fetcher = url => fetch(url).then(res => res.json());
-  const { data } = useSWR("/api/files", fetcher, { refreshInterval: 10000 });
+  const { data } = useSWR("/api/files", fetcher);
 
   const formatDate = (date) => {
     var d = new Date(date),
