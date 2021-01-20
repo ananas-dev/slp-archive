@@ -61,9 +61,9 @@ export default async function handler(req, res) {
   } catch (err) {
     console.log(err);
 
-    if (err.code == "FILE_TYPE") {
+    if (err.code == "LIMIT_FILE_SIZE") {
       return res.status(500).json({
-        message: "File size cannot be larger than 5MB!",
+        message: "File size cannot be larger than 10MB!",
       });
     }
 
