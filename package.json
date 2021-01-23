@@ -8,15 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@slippi/slippi-js": "^5.1.1",
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.3",
+    "fontsource-roboto": "^4.0.0",
     "mongoose": "^5.11.12",
+    "multer": "^1.4.2",
     "next": "10.0.5",
     "react": "17.0.1",
-    "react-bootstrap": "^1.4.3",
     "react-dom": "17.0.1",
-    "swr": "^0.4.0",
-    "multer": "^1.4.2"
+    "swr": "^0.4.0"
   }
 }
